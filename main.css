@@ -58,3 +58,32 @@ h2 {
     position: absolute;
     bottom: 1rem;
 }
+
+.main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+
+.score__section {
+    padding-block: .75rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score__item {
+    padding-block: .5rem;
+    padding-inline: 1.5rem;
+    border: 1px solid var(--color-gold);
+    border-radius: 6px;
+    font-family: var(--titlee);
+    color: var(--white);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.number {
+    font-size: larger;
+    font-weight: 600;
+    color: var(--color-gold);
+}
