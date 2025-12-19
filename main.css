@@ -171,3 +171,15 @@ h2 {
         linear-gradient(#f4cf57 0 0) bottom left / 12px 1px no-repeat,
         linear-gradient(#f4cf57 0 0) bottom left / 1px 12px no-repeat;
 }
+
+
+@media (min-width: 768px) {
+    .game__board {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+    }
+
+    body {
+        padding-inline: 5rem;
+    }
+}
