@@ -97,19 +97,25 @@ h2 {
 
 }
 
-.card {
-    background-color: #222;
-    border-radius: 10px;
+.card, .card__inner, .card__front, .card__back {
     width: 100%;
     height: 100%;
+}
+
+
+.card__back {
+    background-color: #222;
+    border-radius: 10px;
     outline: 1px solid var(--color-gold);
     padding: 8px;
     position: relative;
     overflow: hidden;
 }
 
+
+
 /* Card background pattern */
-.card::after {
+.card__back::after {
     content: "";
     position: absolute;
     inset: 0;
