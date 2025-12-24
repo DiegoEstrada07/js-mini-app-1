@@ -43,4 +43,23 @@ function addCardListeners() {
     });
 }
 
+function handleCardClick() {
+    if (lockBoard) return; // Prevent clicking when the board is locked
+    if (this.classList.contains('is-flipped')) return; // Prevent double clicking the same card if it's already flipped
+
+    flipCard(this); // Call another function called flipCard, which adds the 'is-flipped' class to the clicked card
+
+    // If firstCard is null, set it to the clicked card and return
+    if (!firstCard) {
+        firstCard = this;
+        return;
+    }
+
+    // Set the secondCard to the clicked card and lock the board
+    secondCard = this;
+    lockBoard = true; // Lock the board until cards are compared
+
+    // Wait 1 second
+    setTimeout(checkForMatch, 1000)
+}
 
