@@ -60,7 +60,7 @@ function handleCardClick() {
     lockBoard = true; // Lock the board until cards are compared
 
     // Wait 1 second
-    setTimeout(checkForMatch, 1000)
+    setTimeout(checkForMatch, 900);
 }
 
 // Flip the card by adding the 'is-flipped' class
@@ -77,7 +77,7 @@ function unflipCards() {
 // Check if the two selected cards match
 function checkForMatch() {
     // Compare the data-value attributes of the two cards
-    const isMatch = firstCard.dataSet.value ===secondCard.dataSet.value;
+    const isMatch = firstCard.dataset.value === secondCard.dataset.value;
 
     if (isMatch) {
         disableCards(); // Disable if they match and keep them flipped
@@ -101,10 +101,17 @@ function disableCards() {
     secondCard.style.pointerEvents = 'none';
 }
 
-// This shows the lose overlay
+// Check if the player has won
+function checkWin() {
+    if (matches === 7) {
+        console.log('You won! :)'); // You can replace this with an overlay or any other UI element
+    }
+}
+
+// Check if the player has lost
 function checkLose() {
     if (attempts === 0) {
-        console.log('Perdiste :(');
+        console.log('Game over :('); // You can replace this with an overlay or any other UI element
     }
 }
 
