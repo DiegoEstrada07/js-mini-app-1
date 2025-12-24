@@ -63,3 +63,14 @@ function handleCardClick() {
     setTimeout(checkForMatch, 1000)
 }
 
+// Flip the card by adding the 'is-flipped' class
+function flipCard(card) {
+    card.classList.add('is-flipped');
+}
+
+// Unflip the cards by removing the 'is-flipped' class
+function unflipCards() {
+    firstCard.classList.remove('is-flipped');
+    secondCard.classList.remove('is-flipped');
+}
+
