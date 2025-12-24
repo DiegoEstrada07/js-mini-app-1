@@ -11,13 +11,36 @@ const matchesSpan = document.querySelector('.score__pairs .number'); // Select t
 function initGame() {
     shuffleBoard(); // Shuffle the cards on the board
     updateUI(); // Update the attempts and matches trackers
-    resetBoardState(); // Reset every variable to initial state
+    resetBoardState(); // Reset some variables to initial state
     addCardListeners(); 
 }
 
+// Shuffle the cards on the board
 function shuffleBoard() {
     cards.forEach(card => {
         const randomOrder = Math.floor(Math.random() * cards.length);
         card.style.order = randomOrder;
     });
 }
+
+// Update the attempts and matches trackers in the UI
+function updateUI() {
+    attemptsSpan.textContent = attempts;
+    matchesSpan.textContent = matches;
+}
+
+// Reset some variables to initial state for every new turn
+function resetBoardState() {
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+}
+
+// Add click event listeners to all cards
+function addCardListeners() {
+    cards.forEach(card => {
+        card.addEventListener('click', handleCardClick);
+    });
+}
+
+
