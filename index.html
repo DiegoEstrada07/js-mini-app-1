@@ -28,12 +28,18 @@
         
         <section class="game__board">
 
-            
+            <!--Start overlay-->
+            <div class="start-overlay" id="startOverlay">
+                <div class="start-modal">
+                    <h1>Welcome to Trickards</h1>
+                    <button onclick="startApp()">Start</button>
+                </div>
+            </div>
 
             <!-- OVERLAY -->
             <div class="overlay" id="overlay">
                 <div class="modal" id="modal">
-                    <h1 id="resultText"></h1>
+                    <h2 id="resultText"></h2>
                     <button onclick="hideOverlay()">Try Again</button>
                     <button onclick="location.reload()">Refrescar página</button>
                 </div>

@@ -11,6 +11,10 @@ const overlay = document.getElementById("overlay");//select the loose/win overla
 const modal = document.getElementById("modal");//select the modal to change name
 const resultText = document.getElementById("resultText");//select the text of win or loose
 
+function startApp() {
+   document.getElementById("startOverlay").style.display = "none";// change the start overlay display to "none"
+}
+
 function initGame() {
     shuffleBoard(); // Shuffle the cards on the board
     updateUI(); // Update the attempts and matches trackers
