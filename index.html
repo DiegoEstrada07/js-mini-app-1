@@ -27,11 +27,14 @@
         </section>
         
         <section class="game__board">
+
             
-            <div class="overlay win" id="resultScreen">
-                <div class="modal">
-                    <h1>You Win</h1>
-                    <button>Try Again</button>
+
+            <!-- OVERLAY -->
+            <div class="overlay" id="overlay">
+                <div class="modal" id="modal">
+                    <h1 id="resultText"></h1>
+                    <button onclick="hideOverlay()">Try Again</button>
                 </div>
             </div>
 

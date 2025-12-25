@@ -7,6 +7,9 @@ let matches = 0; // Variable to track number of matches found
 const cards = document.querySelectorAll('.card'); // Select all card elements
 const attemptsSpan = document.querySelector('.score__attempts .number'); // Select the attempts display element
 const matchesSpan = document.querySelector('.score__pairs .number'); // Select the matches display element
+const overlay = document.getElementById("overlay");//select the loose/win overlay
+const modal = document.getElementById("modal");//select the modal to change name
+const resultText = document.getElementById("resultText");//select the text of win or loose
 
 function initGame() {
     shuffleBoard(); // Shuffle the cards on the board
@@ -101,9 +104,27 @@ function disableCards() {
     secondCard.style.pointerEvents = 'none';
 }
 
+//make apear and change the overlay
+
+function showWin() {
+    overlay.style.display = "flex";
+    modal.className = "modal win";
+    resultText.textContent = "You Win";
+}
+
+function showLose() {
+    overlay.style.display = "flex";
+    modal.className = "modal lose";
+    resultText.textContent = "You Lose";
+}
+
+function hideOverlay() {
+    overlay.style.display = "none";
+}
+
 // Check if the player has won
 function checkWin() {
-    if (matches === 7) {
+    if (matches === 9) {
         console.log('You won! :)'); // You can replace this with an overlay or any other UI element
     }
 }
@@ -116,6 +137,7 @@ function checkLose() {
 }
 
 document.addEventListener('DOMContentLoaded', initGame);
+
 
 /* --------------------------------------------------------
     NOTAS
