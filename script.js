@@ -125,6 +125,7 @@ function hideOverlay() {
 // Check if the player has won
 function checkWin() {
     if (matches === 9) {
+      showWin()
         console.log('You won! :)'); // You can replace this with an overlay or any other UI element
     }
 }
@@ -132,6 +133,7 @@ function checkWin() {
 // Check if the player has lost
 function checkLose() {
     if (attempts === 0) {
+      showLose()
         console.log('Game over :('); // You can replace this with an overlay or any other UI element
     }
 }
