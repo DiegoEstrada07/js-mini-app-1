@@ -118,10 +118,6 @@ function showLose() {
     resultText.textContent = "You Lose";
 }
 
-function hideOverlay() {
-    overlay.style.display = "none";
-}
-
 // Check if the player has won
 function checkWin() {
     if (matches === 9) {
