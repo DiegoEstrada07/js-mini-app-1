@@ -94,6 +94,8 @@ function checkForMatch() {
         unflipCards(); // Unflip if they don't match
         attempts--; // Decrement attempts
         checkLose(); // Check if the player has lost
+        cambiarBorde()
+        console.log("yes");
     }
 
     updateUI(); // Update the UI with new attempts and matches
@@ -110,12 +112,12 @@ function disableCards() {
 
 //create a red border every timeyou miss an atemmpt
 function cambiarBorde() {
-  const div = document.getElementById("card");
-  div.style.borderColor = "red";
+  const div = document.getElementById("red");
+  div.style.backgroundColor="#ff00005d";
 
   setTimeout(() => {
-    div.style.borderColor = "black";
-  }, 1000); // 1 segundo
+    div.style.backgroundColor = "#ff000000";
+  }, 500); // 1 segundo
 }
 
 //make apear and change the overlay
@@ -132,6 +134,8 @@ function showLose() {
     resultText.textContent = "You Lose";
 }
 
+//actives each time the attempts reduces
+
 // Check if the player has won
 function checkWin() {
     if (matches === 9) {
@@ -144,7 +148,6 @@ function checkWin() {
 function checkLose() {
     if (attempts === 0) {
       showLose()
-      cambiarBorde()
         console.log('Game over :('); // You can replace this with an overlay or any other UI element
     }
 }
