@@ -10,7 +10,7 @@ const matchesSpan = document.querySelector('.score__pairs .number'); // Select t
 const overlay = document.getElementById("overlay");//select the loose/win overlay
 const modal = document.getElementById("modal");//select the modal to change name
 const resultText = document.getElementById("resultText");//select the text of win or loose
-const imagenes = [
+const images = [
   "./assets/images/argentina.webp",
   "./assets/images/brasil.webp",
   "./assets/images/colombia.webp",
@@ -31,7 +31,15 @@ function initGame() {
 }
 
 //change flags
+ const divs = document.querySelectorAll('.card__front img');
 
+  // Función para cambiar las imágenes aleatoriamente
+  function shuffleImages() {
+    divs.forEach(img => {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      img.src = images[randomIndex];
+    });
+  }
 // Shuffle the cards on the board
 function shuffleBoard() {
     cards.forEach(card => {
@@ -106,6 +114,7 @@ function checkForMatch() {
         attempts--; // Decrement attempts
         checkLose(); // Check if the player has lost
         cambiarBorde(); //change game--board background to red
+        shuffleImages();
     }
 
     updateUI(); // Update the UI with new attempts and matches
