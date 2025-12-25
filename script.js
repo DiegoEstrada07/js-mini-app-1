@@ -108,6 +108,16 @@ function disableCards() {
     secondCard.style.pointerEvents = 'none';
 }
 
+//create a red border every timeyou miss an atemmpt
+function cambiarBorde() {
+  const div = document.getElementById("card");
+  div.style.borderColor = "red";
+
+  setTimeout(() => {
+    div.style.borderColor = "black";
+  }, 1000); // 1 segundo
+}
+
 //make apear and change the overlay
 
 function showWin() {
@@ -134,6 +144,7 @@ function checkWin() {
 function checkLose() {
     if (attempts === 0) {
       showLose()
+      cambiarBorde()
         console.log('Game over :('); // You can replace this with an overlay or any other UI element
     }
 }
