@@ -10,7 +10,15 @@ const matchesSpan = document.querySelector('.score__pairs .number'); // Select t
 const overlay = document.getElementById("overlay");//select the loose/win overlay
 const modal = document.getElementById("modal");//select the modal to change name
 const resultText = document.getElementById("resultText");//select the text of win or loose
-
+const imagenes = [
+  "./assets/images/argentina.webp",
+  "./assets/images/brasil.webp",
+  "./assets/images/colombia.webp",
+  "./assets/images/corea.webp",
+  "./assets/images/mexico.webp",
+  "./assets/images/peru.webp",
+  "./assets/images/republica-checa.webp"
+];//images
 function startApp() {
    document.getElementById("startOverlay").style.display = "none";// change the start overlay display to "none"
 }
@@ -21,6 +29,8 @@ function initGame() {
     resetBoardState(); // Reset some variables to initial state
     addCardListeners(); 
 }
+
+//change flags
 
 // Shuffle the cards on the board
 function shuffleBoard() {
