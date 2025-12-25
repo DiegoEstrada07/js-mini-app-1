@@ -90,12 +90,12 @@ function checkForMatch() {
         disableCards(); // Disable if they match and keep them flipped
         matches++; // Increment matches
         checkWin(); // Check if the player has won
+        right();
     } else {
         unflipCards(); // Unflip if they don't match
         attempts--; // Decrement attempts
         checkLose(); // Check if the player has lost
-        cambiarBorde()
-        console.log("yes");
+        cambiarBorde(); //change game--board background to red
     }
 
     updateUI(); // Update the UI with new attempts and matches
@@ -114,6 +114,16 @@ function disableCards() {
 function cambiarBorde() {
   const div = document.getElementById("red");
   div.style.backgroundColor="#ff00005d";
+
+  setTimeout(() => {
+    div.style.backgroundColor = "#ff000000";
+  }, 500); // 1 segundo
+}
+
+//create a green background when you get it right
+function right() {
+  const div = document.getElementById("red");
+  div.style.backgroundColor="#04ff005f";
 
   setTimeout(() => {
     div.style.backgroundColor = "#ff000000";
