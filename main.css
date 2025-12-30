@@ -263,6 +263,24 @@ h2 {
 }
 
 /* ========================================================================== */
+/* MATCHED CARDS                                         */
+/* ========================================================================== */
+
+.card.is-matched {
+    opacity: 0.7;
+    filter: brightness(0.9);
+    cursor: default;
+    transform: none !important;
+    pointer-events: none !important;
+}
+
+.card.is-matched .card__front {
+    box-shadow: 
+        inset 0 0 0 4px var(--color-gold),
+        0 0 20px rgba(212, 175, 55, 0.7);
+}
+
+/* ========================================================================== */
 /* CARD BASE                                                                   */
 /* ========================================================================== */
 
@@ -399,6 +417,34 @@ h2 {
         linear-gradient(#f4cf57 0 0) top right / 1px 12px no-repeat,
         linear-gradient(#f4cf57 0 0) bottom left / 12px 1px no-repeat,
         linear-gradient(#f4cf57 0 0) bottom left / 1px 12px no-repeat;
+}
+
+/* ========================================================================== */
+/* SHAKE ANIMATION                                     */
+/* ========================================================================== */
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.card.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* ========================================================================== */
+/* ERROR STATE FOR CARDS                                                      */
+/* ========================================================================== */
+
+.card.error .card__front {
+    box-shadow: 
+        inset 0 0 0 4px #ff4444,
+        0 0 15px rgba(255, 68, 68, 0.6);
+}
+
+.card.error .card__front img {
+    filter: grayscale(0.3) brightness(0.8);
 }
 
 /* ========================================================================== */

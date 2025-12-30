@@ -13,6 +13,15 @@
         <h1>Trickards</h1>
         <h2>A CARD GAME OF MEMORY AND TRICKS</h2>
     </header>
+    
+    <!--Start overlay-->
+    <div class="start-overlay" id="startOverlay">
+        <div class="start-modal">
+            <h1>Welcome to Trickards</h1>
+            <button onclick="startApp()">Start</button>
+        </div>
+    </div>
+    
     <main class="main">
         <section class="score__section">
             <div class="score__item score__attempts">
@@ -22,27 +31,11 @@
             <div class="score__item score__pairs">
                 <span>PAIRS</span>
                 <span class="number">0</span>
-                <span class="number">/ 9</span>
-            </div>
-
-            <!--Start overlay-->
-            <div class="start-overlay" id="startOverlay">
-                <div class="start-modal">
-                    <h1>Welcome to Trickards</h1>
-                    <button onclick="startApp()">Start</button>
-                </div>
+                <span class="number">/ 7</span>
             </div>
         </section>
         
         <section class="game__board" id="red">
-
-            <!-- OVERLAY -->
-            <div class="overlay" id="overlay">
-                <div class="modal" id="modal">
-                    <h1 id="resultText"></h1>
-                    <button onclick="location.reload()">Restart</button>
-                </div>
-            </div>
 
             <!-- ----- COLOMBIA CARDS ----- -->
             <div class="card" data-value="colombia" data-type="normal">
@@ -344,6 +337,16 @@
     <footer>
 
     </footer>
+
+    
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal">
+            <h1 id="resultText"></h1>
+            <button onclick="resetGame()">Restart</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
